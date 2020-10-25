@@ -223,3 +223,13 @@
   width: 400px;
   border-bottom: 1px solid #c2c2c3;
 }
+
+.ul_stars {
+  padding: 0 !important;
+}
+
+.ul_stars li {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 2em;
+}

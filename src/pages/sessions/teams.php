@@ -93,7 +93,7 @@ if (isset($GetId)) {
                   $btn = "";
                   $fee_createdat = "";
                   if (!$Read2->getResult()) {
-                    $btn = "<button type='button' ajaxfile='Teams' ajaxaction='out' ajaxdata='id={$value['mem_id']}' confirm='true' class='btn btn-info btn-sm j_ajax_generic'>DAR FEEDBACK</button>";
+                    $btn = '<button type="button" ajaxfile="Feedbacks" ajaxaction="show" ajaxdata="session_id='.$Register['ses_id'].'&member_id='.$value['mem_id'].'" confirm="false" class="btn btn-info btn-sm j_ajax_generic">DAR FEEDBACK</button>';
                   }else {
                     $fee_createdat = $Read2->getResult()[0]['fee_createdat'];
                   }
@@ -121,4 +121,22 @@ if (isset($GetId)) {
   </div>
 
   <?php include 'src/components/footer.php'; ?>
+</div>
+
+<div class="modal fade" id="FeebbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="MemberName"></h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" id="FormFeedback" class="j_form">
+
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

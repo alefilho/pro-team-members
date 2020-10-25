@@ -548,6 +548,18 @@ $(function() {
       tinymce.get("tiny").execCommand('mceCleanup');
     }
   });
+
+  $(document).on("click", ".j_star_feed i", function () {
+    let star = $(this).attr("rel");
+    let ul = $(this).parent().parent().parent();
+
+    ul.find("input").val(star);
+    ul.find('i').attr("class", "far fa-star");
+
+    for (var i = 1; i <= star; i++) {
+      ul.find('i[rel="'+i+'"]').attr("class", "fas fa-star");
+    }
+  });
 })
 
 function showThumbnail(filess) {
