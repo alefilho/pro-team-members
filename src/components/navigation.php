@@ -41,7 +41,7 @@ $pages = [
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?= (((!empty($GetURL) && in_array($GetURL, $pages['sessions'])) || empty($GetURL)) ? "active-clean" : ""); ?>" href="<?= BASE; ?>/panel.php?page=sessions/index">
+            <a class="nav-link <?= (((!empty($GetURL) && in_array($GetURL, $pages['sessions']))) ? "active-clean" : ""); ?>" href="<?= BASE; ?>/panel.php?page=sessions/index">
               <i class="fas fa-atom" style="color: #2dce89;"></i>
               <span class="nav-link-text">Sessões</span>
               <?php
@@ -50,7 +50,7 @@ $pages = [
                 FROM sessions
                 	LEFT JOIN classes ON cla_id = ses_idclass
                 WHERE
-                	cla_iduser = {$_SESSION['userlogin']['use_id']}"
+                	cla_iduser = {$_SESSION['userlogin-member']['mem_id']}"
               );
               ?>
               <span style="padding-left: 15px;"><span class="badge badge-primary"><?= $Read->getResult()[0]['count']; ?></span></span>
