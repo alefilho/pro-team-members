@@ -50,7 +50,7 @@ $pages = [
                 FROM sessions
                 	LEFT JOIN classes ON cla_id = ses_idclass
                 WHERE
-                	cla_iduser = {$_SESSION['userlogin-member']['mem_id']}"
+                	cla_iduser = {$_SESSION['userlogin-member']['mem_idclass']}"
               );
               ?>
               <span style="padding-left: 15px;"><span class="badge badge-primary"><?= $Read->getResult()[0]['count']; ?></span></span>

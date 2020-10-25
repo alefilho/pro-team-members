@@ -64,7 +64,7 @@
                 	LEFT JOIN sessions_topics ON top_idsession = ses_id
                 	LEFT JOIN sessions_topics_feedbacks ON fee_idtopic = top_id
                 WHERE
-                	cla_iduser = {$_SESSION['userlogin']['use_id']}
+                	cla_iduser = {$_SESSION['userlogin-member']['mem_idclass']}
                 GROUP BY
                 	ses_id,
                 	ses_name,

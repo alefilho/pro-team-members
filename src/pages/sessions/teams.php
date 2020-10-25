@@ -68,8 +68,8 @@ if (isset($GetId)) {
                 	members
                 	RIGHT JOIN teams_members ON tme_idmember = mem_id
                 WHERE
-                	tme_idteam IN (SELECT tme_idteam FROM teams_members WHERE tme_idmember = {$_SESSION['userlogin']['use_id']})
-                	AND mem_id <> {$_SESSION['userlogin']['use_id']}
+                	tme_idteam IN (SELECT tme_idteam FROM teams_members WHERE tme_idmember = {$_SESSION['userlogin-member']['mem_id']})
+                	AND mem_id <> {$_SESSION['userlogin-member']['mem_id']}
                 GROUP BY
                 	mem_id,
                 	mem_name

@@ -26,7 +26,7 @@ class Login {
   }
 
   public function CheckLogin() {
-    if(empty($_SESSION['userlogin-member']['mem_id'])):
+    if(empty($_SESSION['userlogin-member'])):
       unset($_SESSION['userlogin-member']);
       return false;
     else:
